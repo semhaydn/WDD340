@@ -23,6 +23,10 @@ app.set("layout", "./layouts/layout") // not at views root
  * Routes
  *************************/
 app.use(static)
+// Index route
+app.get("/", (req, res) => {
+  res.render("index", { title: "Home" })
+})
 
 /* ***********************
  * Local Server Information
@@ -37,3 +41,5 @@ const host = process.env.HOST
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })
+
+
